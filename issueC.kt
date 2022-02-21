@@ -5,7 +5,7 @@ fun checkIsScammer(name: String, surname : String): Boolean {
         return false
     }
     val nameAsSet = name.toSet()
-    val surnameAsSet = name.toSet()
+    val surnameAsSet = surname.toSet()
     if (nameAsSet == surnameAsSet) {
         return true
     }
@@ -14,9 +14,9 @@ fun checkIsScammer(name: String, surname : String): Boolean {
 
 fun main () {
     val reader = Scanner(System.`in`)
-    print("Введите имя: ")
-    val name: String = reader.next().uppercase(Locale.getDefault())
-    val surname : String = reader.next()
+    print("Введите обфусцированный код: ")
+    val name: String = reader.next().uppercase()
+    val surname : String = reader.next().uppercase()
     print(when(checkIsScammer(name, surname)) {
         true -> "Yes"
         false -> "No"
